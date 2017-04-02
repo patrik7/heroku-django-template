@@ -1,0 +1,125 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    {% block meta %}
+    <meta name="description" content=""> <!-- TODO update lang -->
+    <meta name="author" content=""> <!-- TODO update author -->
+    {% endblock %}
+
+    <meta name="keywords" content="" /> <!-- TODO update keywords -->
+    <meta name="referrer" content="origin">
+
+    <meta property="og:url"           content="http:/{{request.path}}" /> <!-- TODO  add domain -->
+
+    {% block fb_tags %}
+
+    <!-- TODO fb meta -->
+    <meta property="og:type"          content="article" />
+    <meta property="og:title"         content="" />
+    <meta property="og:description"   content="" />
+    <meta property="og:image"         content="{% static '' %}" />
+    <meta property="og:author" content="">
+
+    {% endblock %}
+
+    <meta name="twitter:url" content="http://{{request.path}}"/> <!-- TODO  add domain -->
+
+    {% block twitter_tags %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@"> <!-- TODO twitter handle -->
+    <meta name="twitter:creator" content="@"> <!-- TODO twitter handle -->
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">  
+    <meta name="twitter:image:src" content="{% static '' %}">
+
+    {% endblock %}
+
+    <meta property="fb:admins" content="" /> <!-- TODO -->
+
+    {% block robots %}
+    {% endblock %}
+
+    <!-- TODO add favicon -->
+
+    <title>{% block title%}TODO Add title{% endblock %} - Website name</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% block extra_css %}
+    {% endblock %}
+
+      </head>
+
+  <body>
+
+    {% block body_start %}
+    {% endblock %}
+
+    <div class="wrapper">
+      <div class="container" style="position: relative;">        
+
+        {% block messages %}
+          {% if messages %}
+            {% for message in messages %}
+              <div {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %} role="alert">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+      </div> <!-- /container -->
+      <div class="push"></div>
+    </div>
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-xs-9 text-right">
+              <a class="terms" href="#">FAQ</a> |
+              <a class="terms" href="#" rel="nofollow">Privacy Policy</a> |
+              <a class="terms" href="#" rel="nofollow">Terms and conditions</a>
+            
+              <p class="hidden-xs">Copyright &copy; 2017 TODO<span class="hidden-xs"> | Add your SEO text</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/jquery.min.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'js/typeahead.bundle.js' %}" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- TODO script src="../../assets/js/ie10-viewport-bug-workaround.js"></script -->
+
+    {% block extra_script %}
+    {% endblock %}
+
+  </body>
+
+</html>
+
