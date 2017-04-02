@@ -1,12 +1,15 @@
 # Heroku Django Starter Template
 
-An utterly fantastic project starter template for Django 1.10.
+An utterly fantastic project starter template for:
+-Django 1.10.
+-Bootstrap 3.0
+-JQuery
 
 ## Features
 
 - Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
 - Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment. 
+- Python 2.7 runtime environment. 
 
 ## How to Use
 
@@ -38,10 +41,6 @@ You can replace ``helloworld`` with your desired project name.
     $ heroku run python manage.py migrate
 
 See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
-
-## Using Python 2.7?
-
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
 
 
 ## License: MIT

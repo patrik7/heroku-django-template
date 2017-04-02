@@ -52,6 +52,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
 
@@ -86,13 +87,16 @@
         {% block content %}
         {% endblock %}
 
-      </div> <!-- /container -->
+      </div> <!-- container -->
       <div class="push"></div>
     </div>
     <div class="footer-wrapper">
       <div class="footer">
         <div class="container">
           <div class="row">
+            <div class="col-sm-4 col-xs-3">
+              LOGO
+            </div>
             <div class="col-sm-8 col-xs-9 text-right">
               <a class="terms" href="#">FAQ</a> |
               <a class="terms" href="#" rel="nofollow">Privacy Policy</a> |
@@ -110,8 +114,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{% static 'js/jquery.min.js' %}" crossorigin="anonymous"></script>
     <script src="{% static 'js/bootstrap.min.js' %}" crossorigin="anonymous"></script>
-    <script src="{% static 'js/jquery.countdown.min.js' %}" crossorigin="anonymous"></script>
-    <script src="{% static 'js/typeahead.bundle.js' %}" crossorigin="anonymous"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- TODO script src="../../assets/js/ie10-viewport-bug-workaround.js"></script -->
