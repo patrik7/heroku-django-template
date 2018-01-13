@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load humanize %}
+{% load compress %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,8 +53,9 @@
     <title>{% block title%}TODO Add title{% endblock %} - Website name</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% compress css %}
+    <link type="text/less" href="{% static 'css/base.less' %}" rel="stylesheet">
+    {% endcompress %}
 
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
 
